@@ -5,11 +5,11 @@ var table = new AsciiTable()
 table.setHeading('Commands', 'Stats').setBorder('|', '=', "0", "0")
 
 module.exports = (client) => {
-	fs.readdirSync('./Commands/Prefix/').forEach(dir => {
-		const files = fs.readdirSync(`./Commands/Prefix/${dir}/`).filter(file => file.endsWith('.js'));
+	fs.readdirSync('./Commands/Prefıx/').forEach(dir => {
+		const files = fs.readdirSync(`./Commands/Prefıx/${dir}/`).filter(file => file.endsWith('.js'));
 		if(!files || files.length <= 0) console.log(chalk.red("Commands - 0"))
 				files.forEach((file) => {
-						let command = require(`../Commands/Prefix/${dir}/${file}`)
+						let command = require(`../Commands/Prefıx/${dir}/${file}`)
 						if(command) {
 								client.commands.set(command.name, command)
 								if(command.aliases && Array.isArray(command.aliases)) {
